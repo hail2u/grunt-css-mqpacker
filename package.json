@@ -44,7 +44,7 @@
     "mediaqueries"
   ],
   "dependencies": {
-    "css-mqpacker": "0.0.1",
+    "css-mqpacker": "0.0.2",
     "async": "~0.2.10"
   }
 }
