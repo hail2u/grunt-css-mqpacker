@@ -31,7 +31,7 @@ module.exports = function (grunt) {
 
       var css = grunt.file.read(src);
       grunt.file.write(dest, mqpacker.pack(css, options).css);
-      grunt.log.ok('File ' + dest + ' created.');
+      grunt.log.writeln('File ' + dest + ' created.');
       next();
     }, function (err) {
       done(err);
