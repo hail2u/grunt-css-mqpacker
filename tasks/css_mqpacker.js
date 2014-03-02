@@ -1,11 +1,4 @@
-/*
- * grunt-css-mqpacker
- * https://github.com/hail2u/grunt-css-mqpacker
- *
- * Copyright (c) 2014 Kyo Nagashima
- * Licensed under the MIT license.
- */
-
+/* jshint node: true */
 'use strict';
 
 module.exports = function (grunt) {
