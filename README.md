@@ -36,7 +36,8 @@ grunt.initConfig({
     main: {
       expand: true,
       cwd: 'src/css/',
-      src: '*.css'
+      src: '*.css',
+      dest: 'dest/css/'
     }
   },
 });
@@ -46,6 +47,24 @@ grunt.initConfig({
 ### Options
 
 The options are the same as second argument of [PostCSS](https://github.com/ai/postcss)'s `process()`. With this options, you can update a existing Source Map file. For more information, please read the PostCSS document.
+
+#### options.map
+
+You can set `options.map` same as PostCSS's `process()` (e.g. `true`, `false` and Source Map content). Additionally, you can update an existent Source Map file by specifing its path.
+
+```js
+grunt.initConfig({
+  css_mqpacker: {
+    options: {
+      map: 'src/css/style.css.map'
+    },
+    main: {
+      src: 'src/css/style.css',
+      dest: 'dest/css/style.css'
+    }
+  },
+});
+```
 
 
 ## Contributing
