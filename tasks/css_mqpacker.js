@@ -22,9 +22,25 @@ module.exports = function (grunt) {
         return next();
       }
 
-      var css = grunt.file.read(src);
-      grunt.file.write(dest, mqpacker.pack(css, options).css);
+      if (options.map) {
+        options.from = src;
+        options.to = dest;
+
+        if (typeof options.map === 'string' && grunt.file.exists(options.map)) {
+          options.map = grunt.file.read(options.map);
+        }
+      }
+
+      var processed = mqpacker.pack(grunt.file.read(src), options);
+      grunt.file.write(dest, processed.css);
       grunt.log.writeln('File ' + dest + ' created.');
+
+      if (options.map) {
+        var map = options.to + '.map';
+        grunt.file.write(map, processed.map);
+        grunt.log.writeln('File ' + map + ' created.');
+      }
+
       next();
     }, function (err) {
       done(err);
