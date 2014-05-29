@@ -7,6 +7,7 @@ module.exports = function (grunt) {
       options: {
         jshintrc: '.jshintrc'
       },
+
       all: [
         'Gruntfile.js',
         'tasks/*.js',
@@ -25,15 +26,17 @@ module.exports = function (grunt) {
         src: 'default_options.css',
         dest: 'tmp/'
       },
+
       custom_options: {
         options: {
           map: true
         },
+
         expand: true,
         cwd: 'test/fixtures/',
         src: 'custom_options.css',
         dest: 'tmp/'
-      },
+      }
     },
 
     nodeunit: {

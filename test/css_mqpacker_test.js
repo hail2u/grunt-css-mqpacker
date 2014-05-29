@@ -26,5 +26,5 @@ exports.css_mqpacker = {
     test.equal(actual, expected, 'should pack media queries with Source Map link.');
 
     test.done();
-  },
+  }
 };
