@@ -26,7 +26,13 @@ module.exports = function (grunt) {
         options.from = src;
         options.to = dest;
 
-        if (typeof options.map === 'string' && grunt.file.exists(options.map)) {
+        if (typeof options.map === 'string') {
+          if (!grunt.file.exists(options.map)) {
+            grunt.log.warn('Specified Source Map file "' + options.map + '" not found.');
+
+            return next();
+          }
+
           options.map = grunt.file.read(options.map);
         }
       }
