@@ -40,8 +40,11 @@
   "keywords": [
     "gruntplugin",
     "css",
-    "postcss",
-    "mediaqueries"
+    "optimization",
+    "mediaquery",
+    "media",
+    "query",
+    "postcss"
   ],
   "dependencies": {
     "css-mqpacker": "~0.1.1",
