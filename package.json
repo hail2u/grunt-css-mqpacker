@@ -15,12 +15,7 @@
   "bugs": {
     "url": "https://github.com/hail2u/grunt-css-mqpacker/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://hail2u.mit-license.org/2014"
-    }
-  ],
+  "licenses": "MIT",
   "main": "Gruntfile.js",
   "engines": {
     "node": ">= 0.8.0"
