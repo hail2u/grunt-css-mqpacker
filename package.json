@@ -39,6 +39,9 @@
     "mediaquery",
     "media",
     "query",
+    "sourcemap",
+    "source",
+    "map",
     "postcss"
   ],
   "dependencies": {
