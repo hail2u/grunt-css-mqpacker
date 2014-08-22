@@ -39,12 +39,12 @@ module.exports = function (grunt) {
 
       var processed = mqpacker.pack(grunt.file.read(src), options);
       grunt.file.write(dest, processed.css);
-      grunt.log.writeln('File ' + dest + ' created.');
+      grunt.verbose.log.writeln('File ' + dest + ' created.');
 
       if (options.map) {
         var map = options.to + '.map';
         grunt.file.write(map, processed.map);
-        grunt.log.writeln('File ' + map + ' created.');
+        grunt.verbose.log.writeln('File ' + map + ' created (source map).');
       }
 
       next();
