@@ -1,18 +1,22 @@
 'use strict';
 
-var grunt = require('grunt');
+var fs = require('fs');
+
+var read = function (filename) {
+  return fs.readFileSync(filename, 'utf8');
+};
 
 exports.css_mqpacker = {
-  setUp: function (done) {
-    done();
-  },
-
   default_options: function (test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/default_options.css');
-    var expected = grunt.file.read('test/expected/default_options.css');
-    test.equal(actual, expected, 'should pack media queries.');
+    var actual = read('tmp/default_options.css');
+    var expected = read('test/expected/default_options.css');
+    test.equal(
+      actual,
+      expected,
+      'should pack media queries.'
+    );
 
     test.done();
   },
@@ -20,9 +24,13 @@ exports.css_mqpacker = {
   external: function (test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/external.css');
-    var expected = grunt.file.read('test/expected/external.css');
-    test.equal(actual, expected, 'should pack media queries with external source map link.');
+    var actual = read('tmp/external.css');
+    var expected = read('test/expected/external.css');
+    test.equal(
+      actual,
+      expected,
+      'should pack media queries with external source map link.'
+    );
 
     test.done();
   },
@@ -30,9 +38,13 @@ exports.css_mqpacker = {
   no_sourcesContent: function (test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/no_sourcescontent.css');
-    var expected = grunt.file.read('test/expected/no_sourcescontent.css');
-    test.equal(actual, expected, 'should pack media queries with inline source map that excludes its sources.');
+    var actual = read('tmp/no_sourcescontent.css');
+    var expected = read('test/expected/no_sourcescontent.css');
+    test.equal(
+      actual,
+      expected,
+      'should pack media queries without sources.'
+    );
 
     test.done();
   }
