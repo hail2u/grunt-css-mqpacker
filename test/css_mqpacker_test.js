@@ -17,16 +17,6 @@ exports.css_mqpacker = {
     test.done();
   },
 
-  inline: function (test) {
-    test.expect(1);
-
-    var actual = grunt.file.read('tmp/inline.css');
-    var expected = grunt.file.read('test/expected/inline.css');
-    test.equal(actual, expected, 'should pack media queries with inline source map.');
-
-    test.done();
-  },
-
   external: function (test) {
     test.expect(1);
 

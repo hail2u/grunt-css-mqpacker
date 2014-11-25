@@ -24,17 +24,6 @@ module.exports = function (grunt) {
         dest: 'tmp/default_options.css'
       },
 
-      inline: {
-        options: {
-          map: {
-            inline: true
-          }
-        },
-
-        src: 'test/fixtures/default.css',
-        dest: 'tmp/inline.css'
-      },
-
       external: {
         options: {
           map: {
