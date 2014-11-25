@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hail2u/grunt-css-mqpacker.git"
+    "url": "https://github.com/hail2u/grunt-css-mqpacker.git"
   },
   "bugs": {
     "url": "https://github.com/hail2u/grunt-css-mqpacker/issues"
