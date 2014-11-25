@@ -25,23 +25,13 @@ module.exports = function (grunt) {
       if (options.map) {
         options.from = src;
         options.to = dest;
-
-        if (typeof options.map === 'string') {
-          if (!grunt.file.exists(options.map)) {
-            grunt.log.warn('Specified Source Map file "' + options.map + '" not found.');
-
-            return next();
-          }
-
-          options.map = grunt.file.read(options.map);
-        }
       }
 
       var processed = mqpacker.pack(grunt.file.read(src), options);
       grunt.file.write(dest, processed.css);
       grunt.log.writeln('File ' + dest + ' created.');
 
-      if (options.map) {
+      if (options.map && processed.map) {
         var map = options.to + '.map';
         grunt.file.write(map, processed.map);
         grunt.log.writeln('File ' + map + ' created.');

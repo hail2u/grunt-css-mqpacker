@@ -21,21 +21,41 @@ module.exports = function (grunt) {
 
     css_mqpacker: {
       default_options: {
-        expand: true,
-        cwd: 'test/fixtures/',
-        src: 'default_options.css',
-        dest: 'tmp/'
+        src: 'test/fixtures/default.css',
+        dest: 'tmp/default_options.css'
       },
 
-      custom_options: {
+      inline: {
         options: {
-          map: true
+          map: {
+            inline: true
+          }
         },
 
-        expand: true,
-        cwd: 'test/fixtures/',
-        src: 'custom_options.css',
-        dest: 'tmp/'
+        src: 'test/fixtures/default.css',
+        dest: 'tmp/inline.css'
+      },
+
+      external: {
+        options: {
+          map: {
+            inline: false
+          }
+        },
+
+        src: 'test/fixtures/default.css',
+        dest: 'tmp/external.css'
+      },
+
+      no_sourcesContent: {
+        options: {
+          map: {
+            sourcesContent: false
+          }
+        },
+
+        src: 'test/fixtures/default.css',
+        dest: 'tmp/no_sourcescontent.css'
       }
     },
 

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.foo {
+  z-index: 1;
+}
+
+.bar {
+  z-index: 2;
+}
+
+@media (min-width: 999px) {
+  .foo {
+    z-index: 3;
+  }
+  .bar {
+    z-index: 4;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Rlc3QvZml4dHVyZXMvZGVmYXVsdC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsa0JBQWlCOztBQUVqQjtFQUNFLFlBQVc7RUFDWjs7QUFRRDtFQUNFLFlBQVc7RUFDWjs7QUFSRDtFQUNFO0lBQ0UsWUFBVztJQUNaO0VBUUQ7SUFDRSxZQUFXO0lBQ1o7RUFURiIsImZpbGUiOiJub19zb3VyY2VzY29udGVudC5jc3MifQ== */
