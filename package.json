@@ -2,26 +2,13 @@
   "name": "grunt-css-mqpacker",
   "description": "Pack same media query rules into one media query rule using CSS MQPacker.",
   "version": "2.0.0",
-  "homepage": "https://github.com/hail2u/grunt-css-mqpacker",
   "author": {
     "name": "Kyo Nagashima",
     "email": "kyo@hail2u.net",
     "url": "http:/hail2u.net/"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hail2u/grunt-css-mqpacker.git"
-  },
   "bugs": {
     "url": "https://github.com/hail2u/grunt-css-mqpacker/issues"
-  },
-  "licenses": "MIT",
-  "main": "Gruntfile.js",
-  "engines": {
-    "node": ">= 0.8.0"
-  },
-  "scripts": {
-    "test": "grunt"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -33,6 +20,10 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "^0.4.1"
   },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "homepage": "https://github.com/hail2u/grunt-css-mqpacker",
   "keywords": [
     "gruntplugin",
     "css",
@@ -44,5 +35,14 @@
     "source",
     "map",
     "postcss"
-  ]
+  ],
+  "licenses": "MIT",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hail2u/grunt-css-mqpacker.git"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
 }
