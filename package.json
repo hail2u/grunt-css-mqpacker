@@ -36,7 +36,10 @@
     "map",
     "postcss"
   ],
-  "licenses": "MIT",
+  "license": {
+    "type": "MIT",
+    "url": "http://hail2u.mit-license.org/2014"
+  },
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",
