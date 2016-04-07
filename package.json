@@ -17,16 +17,11 @@
   },
   "homepage": "https://github.com/hail2u/grunt-css-mqpacker",
   "keywords": [
-    "gruntplugin",
     "css",
-    "optimization",
-    "mediaquery",
+    "gruntplugin",
     "media",
-    "query",
-    "sourcemap",
-    "source",
-    "map",
-    "postcss"
+    "postcss-plugin",
+    "query"
   ],
   "license": "MIT",
   "main": "Gruntfile.js",
