@@ -8,11 +8,13 @@
   z-index: 2;
 }
 
-@media (min-width: 999px) {
-  .foo {
+@media (min-width: 999px){
+
+  .foo{
     z-index: 3;
   }
-  .bar {
+
+  .bar{
     z-index: 4;
   }
 }
