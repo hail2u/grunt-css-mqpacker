@@ -1,27 +1,27 @@
-'use strict';
+"use strict";
 
 module.exports = function (grunt) {
   grunt.initConfig({
     jshint: {
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: ".jshintrc"
       },
 
       all: [
-        'Gruntfile.js',
-        'tasks/*.js',
-        '<%= nodeunit.tests %>'
+        "Gruntfile.js",
+        "tasks/*.js",
+        "<%= nodeunit.tests %>"
       ]
     },
 
     clean: {
-      tests: ['tmp']
+      tests: ["tmp"]
     },
 
     css_mqpacker: {
       default_options: {
-        src: 'test/fixtures/default.css',
-        dest: 'tmp/default_options.css'
+        src: "test/fixtures/default.css",
+        dest: "tmp/default_options.css"
       },
 
       external: {
@@ -31,8 +31,8 @@ module.exports = function (grunt) {
           }
         },
 
-        src: 'test/fixtures/default.css',
-        dest: 'tmp/external.css'
+        src: "test/fixtures/default.css",
+        dest: "tmp/external.css"
       },
 
       no_sourcesContent: {
@@ -42,23 +42,23 @@ module.exports = function (grunt) {
           }
         },
 
-        src: 'test/fixtures/default.css',
-        dest: 'tmp/no_sourcescontent.css'
+        src: "test/fixtures/default.css",
+        dest: "tmp/no_sourcescontent.css"
       }
     },
 
     nodeunit: {
-      tests: ['test/*_test.js']
+      tests: ["test/*_test.js"]
     }
   });
 
-  grunt.loadTasks('tasks');
+  grunt.loadTasks("tasks");
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks("grunt-contrib-jshint");
+  grunt.loadNpmTasks("grunt-contrib-clean");
+  grunt.loadNpmTasks("grunt-contrib-nodeunit");
 
-  grunt.registerTask('test', ['clean', 'css_mqpacker', 'nodeunit']);
+  grunt.registerTask("test", ["clean", "css_mqpacker", "nodeunit"]);
 
-  grunt.registerTask('default', ['jshint', 'test']);
+  grunt.registerTask("default", ["jshint", "test"]);
 };
