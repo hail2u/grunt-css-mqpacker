@@ -1,24 +1,32 @@
-'use strict';
+"use strict";
 
 module.exports = function (grunt) {
-  var taskName = 'css_mqpacker';
-  var taskDescription = 'Pack same media query rules into one media query rule using CSS MQPacker.';
+  var pkg = require("../package.json");
+  pkg.name = pkg.name.replace(/^grunt-/, "").replace(/-/g, "_");
 
-  grunt.registerMultiTask(taskName, taskDescription, function () {
-    var async= require('async');
-    var mqpacker = require('css-mqpacker');
+  grunt.registerMultiTask(pkg.name, pkg.description, function () {
+    var fs = require("fs-extra");
+    var mqpacker = require("css-mqpacker");
 
-    var done = this.async();
     var options = this.options({});
 
-    async.each(this.files, function (file, next) {
-      var src = file.src[0];
-      var dest = file.dest;
+    this.files.forEach(function (file) {
+      var dest;
+      var map;
+      var processed;
+      var src;
 
-      if (!grunt.file.exists(src)) {
+      if (file.src.length !== 1) {
+        grunt.fail.warn("This Grunt plugin does not support multiple source files.");
+      }
+
+      src = file.src[0];
+      dest = file.dest;
+
+      if (!fs.existsSync(src)) {
         grunt.log.warn('Source file "' + src + '" not found.');
 
-        return next();
+        return;
       }
 
       if (options.map) {
@@ -26,19 +34,15 @@ module.exports = function (grunt) {
         options.to = dest;
       }
 
-      var processed = mqpacker.pack(grunt.file.read(src), options);
-      grunt.file.write(dest, processed.css);
-      grunt.log.writeln('File ' + dest + ' created.');
+      processed = mqpacker.pack(fs.readFileSync(src, "utf8"), options);
+      fs.outputFileSync(dest, processed.css);
+      grunt.log.writeln('File "' + dest + '" created.');
 
-      if (options.map && processed.map) {
-        var map = options.to + '.map';
-        grunt.file.write(map, processed.map);
-        grunt.log.writeln('File ' + map + ' created.');
+      if (processed.map) {
+        map = dest + ".map";
+        fs.outputFileSync(map, processed.map);
+        grunt.log.writeln('File "' + map + '" created.');
       }
-
-      next();
-    }, function (err) {
-      done(err);
     });
   });
 };
