@@ -24,7 +24,7 @@
     "query"
   ],
   "license": "MIT",
-  "main": "Gruntfile.js",
+  "main": "tasks/css_mqpacker.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/hail2u/grunt-css-mqpacker.git"
