@@ -1,7 +1,7 @@
 {
   "name": "grunt-css-mqpacker",
   "description": "Pack same media query rules into one media query rule using CSS MQPacker.",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Kyo Nagashima <hail2u@gmail.com> (https://kyonagashima.com/)",
   "bugs": {
     "url": "https://github.com/hail2u/grunt-css-mqpacker/issues"
