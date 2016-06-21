@@ -32,7 +32,8 @@ grunt.initConfig({
   css_mqpacker: {
     main: {
       options: {
-        map: true
+        map: true,
+        sort: true
       },
 
       expand: true,
@@ -44,12 +45,12 @@ grunt.initConfig({
 });
 ```
 
-Running `$ grunt css_mqpacker` with these options will pack media queries in `src/css/*.css` with inline source maps, and output to `dest/css/*.css`.
+Running `$ grunt css_mqpacker` with these options will pack and sort media queries in `src/css/*.css` with inline source maps, and output to `dest/css/*.css`.
 
 
 ### Options
 
-The task options are the same as second argument of [PostCSS `process()` method](https://github.com/postcss/postcss). With these options, you can create or update source maps. For more information, please read the PostCSS document.
+The task options are the same as second argument of [PostCSS `pack()` method](https://github.com/hail2u/node-css-mqpacker#packcss-options). With these options, you can create or update source maps, and sort queries. For more information, please read the CSS MQPacker document.
 
 
 ## Contributing
